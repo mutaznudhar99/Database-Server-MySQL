@@ -82,7 +82,10 @@ sebelum melakukan instalasi & konfigurasi database MySQL Server pada level OS li
 
 8. Konfigurasi mysqld.cnf/my.ini sebagai konfigurasi utama database server untuk mengatur perilaku mysql server tentang bagaimana database server harus beroperasi saat startup.
 
-   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e049879-6df6-428f-8819-6465d2d81268" />
+   - sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
+
+     <img width="1028" height="111" alt="Screenshot (152)" src="https://github.com/user-attachments/assets/a2e6018a-9e1b-4720-aab5-3c582487a053" />
+
 
 
 
