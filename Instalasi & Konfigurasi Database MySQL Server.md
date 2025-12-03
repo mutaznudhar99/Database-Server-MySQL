@@ -75,7 +75,8 @@ sebelum melakukan instalasi & konfigurasi database MySQL Server pada level OS li
 
      - sudo journalctl -u mysql -xe
 
-       <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/084612a1-b85e-459b-86fa-b41e6fc5221b" />
+       <img width="1180" height="357" alt="Screenshot (148)" src="https://github.com/user-attachments/assets/3029f3f6-ca27-4eb1-8058-ef852aac3b9c" />
+
 
 
        
