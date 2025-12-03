@@ -47,10 +47,35 @@ sebelum melakukan instalasi & konfigurasi database MySQL Server pada level OS li
 
      sudo mysql_secure_installation
 
-     <img width="1692" height="252" alt="Screenshot (142)" src="https://github.com/user-attachments/assets/9f0398b1-cf43-46fa-88b5-db31b094349a" />
+     <img width="1391" height="599" alt="Screenshot (144)" src="https://github.com/user-attachments/assets/e5ff46d3-535e-44bf-823b-6d39ce3d861e" />
      - ikuti wizard konfigurasi pada server dengan input password baru dan "Yes" sampai selesai.
      - tidak bisa lagi terkoneksi ke database server hanya dengan syntax **Sudo mysql**
-       
+
+
+5. kontrol systemctl database pada os
+   - biasanya dilakukan ketika ingin melakukan cold backup atau setelah perubahan configurasi pada mysqld.cnf/my.ini
+
+     sudo systemctl start [namaservice]
+
+     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2fe30c46-a3eb-4466-a3b0-d46204ed6c42" />
+
+     sudo systemctl stop [namaservice]
+
+     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6130b570-cc82-4a6c-961d-60f120a94a96" />
+
+     sudo systemctl restart [namaservice]
+
+     <img width="1234" height="328" alt="Screenshot (147)" src="https://github.com/user-attachments/assets/0274e59f-4110-4d97-a0f5-1ed660a3920e" />
+
+
+     
+
+      
+
+
+   
+   
+   
 
      
 
