@@ -1,4 +1,4 @@
-setelah sebelumnya saya sudah melakukan instalasi database mysql server dan mengkonfigurasinya dalam perilaku database server yang sudah disesuaikan dengan kebutuhan database non produksi, selanjutnya saya akan membuat user, permission, dan security database yang bisa dilakukan pada level middle-enterprise.
+setelah sebelumnya saya sudah melakukan instalasi database mysql server dan mengkonfigurasinya dalam perilaku database server yang disesuaikan dengan kebutuhan database non produksi, selanjutnya saya akan membuat user, permission, dan security database yang dilakukan pada level middle-enterprise.
 
 dalam individual project ini, saya tidak akan melakukan operasional database menggunakan user 'root'. saya akan membuat user operasional yang dibagi menjadi user **read** and **writer**.
 
