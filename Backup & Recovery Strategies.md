@@ -17,8 +17,8 @@ kenapa saya memilih menggunakan percona xtrbackup dibandingkan dengan mysql ente
 
 
    - membuat schema baru yang berisikan 1 tabel dan 5 baris data
-     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/215ec4e6-a26f-4c60-95f8-bc0d53a96851" />
-     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8199da47-174e-42bf-96b6-c27234e278a3" />
+     <img width="1565" height="429" alt="Screenshot (173)" src="https://github.com/user-attachments/assets/14a6d927-d252-458c-9f87-06ba719dbdb0" />
+     <img width="694" height="233" alt="Screenshot (175)" src="https://github.com/user-attachments/assets/abde9a4a-82b5-42c9-a468-7fb696a8f936" />
 
 
    - menampilkan schema baru dan tabel yang ada pada schema 
