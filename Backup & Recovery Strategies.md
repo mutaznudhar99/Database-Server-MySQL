@@ -28,10 +28,27 @@ kenapa saya memilih menggunakan percona xtrbackup dibandingkan dengan mysql ente
 
 
 
-2. sebelum melakukan backup cek ukuran file data dan schema untuk monitoring dan memanajemen ruang tempat backup data dan server restore yang berbeda.
+2. sebelum melakukan backup cek ukuran file data dan schema untuk monitoring dan memanajemen ruang lokasi backup data dan server restore yang berbeda.
 
    - sudo du -h -d 1 /var/lib/mysql
      <img width="733" height="184" alt="Screenshot (177)" src="https://github.com/user-attachments/assets/6dc519da-4404-422a-b7e8-3c560db9bac5" />
+
+
+3. membuat file mkdir -r /mnt/backups
+
+4. melakukan cek ukuran lokasi file backup
+
+5. melakukan full backup ke lokasi file untuk menyimpan backup
+
+6. memberikan izin mysql untuk mengakses lokasi file backup
+
+7. mengirim file backup ke server yang berbeda menggunakan ssh@ipserver dan lokasi file backup di server yang berbeda
+
+8. memindahkan file backup ke lokasi file data
+
+9. melakukan restore data file ke dalam database di server yang berbeda
+
+
 
 
    
