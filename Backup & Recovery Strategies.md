@@ -1,4 +1,4 @@
-pada sesi ini, saya akan melakukan backup & restore pada server yang berbeda yang sudah terinstalasi database mysql server dan perxona xtrabackup.
+pada sesi ini, saya akan melakukan backup & restore pada server database mysql yang berbeda dengan versi yang sama 8.0 menggunakan percona xtrabackup.8.0
 
 kenapa saya memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterprise backup:
 - percona xtrabackup merupakan tools backup open source dibandingkan mysql backup yang berbayar
