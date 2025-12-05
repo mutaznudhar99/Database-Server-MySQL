@@ -6,6 +6,7 @@ kenapa saya memilih menggunakan percona xtrbackup dibandingkan dengan mysql ente
 - sangat cepat dan andal untuk membackup dan restore file data
 - non blocking saat melakukan backup, artinya backup bisa berjalan di saat database aktif (hot backup)
 - terintegrasi dengan incremental backup, parallel backup, compressed file backup, dan sebagainya.
+- menyimpan redo log (transaction log) selama menyimpan data fisik menggunakan xtrabackup dan harus menggunakan syntax **--prepare** saat melakukan restore data untuk menjaga konsistensi data. 
 
 
 
