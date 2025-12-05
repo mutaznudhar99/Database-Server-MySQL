@@ -36,10 +36,11 @@ dalam individual project ini, saya tidak akan melakukan operasional database men
        - specific ip : digunakan hanya untuk mengizinkan koneksi dari satu alamat ip yang ditentukan
 
 
-5. Monitoring user exist/yang ada di dalam database server beserta dengan role nya.
+5. Monitoring user exist/yang ada di dalam database server beserta dengan role dan autentifikasi security server.
 
    - menampilkan user yang ada di dalam server database
-     <img width="841" height="300" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/3f3ab12c-ccfb-4821-b273-975457715780" />
+   - memastikan user yang dibuat memiliki autentifikasi security yang disetujui oleh database server
+     <img width="921" height="323" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/a17e7c36-0275-42ac-996d-ef2781ef902d" />
 
    - menampilan user beserta dengan role nya di dalam database server
      <img width="1014" height="387" alt="Screenshot (159)" src="https://github.com/user-attachments/assets/fa005377-e973-413a-86b9-f7b610244edb" />
