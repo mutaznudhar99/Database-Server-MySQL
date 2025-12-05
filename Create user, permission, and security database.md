@@ -9,6 +9,9 @@ dalam individual project ini, saya tidak akan melakukan operasional database men
 
 2. cek validasi password yang disetujui oleh server saat membuat user
    - memastikan password yang dibuat untuk user sesuai dengan keamanan database server
+
+     <img width="921" height="126" alt="Screenshot (182)" src="https://github.com/user-attachments/assets/644d0afe-ac83-41ce-b60a-ef98c299c99b" />
+
    - membuat kemanan menggunakan autentifikasi plugin 
      
      <img width="986" height="287" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/a68f34af-a64b-4986-817c-bd4850c911c8" />
