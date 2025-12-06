@@ -22,7 +22,7 @@ dalam individual project ini, saya tidak akan melakukan operasional database men
      - cek_user_name : tidak boleh mengandung nama user
 
 
-4. selanjutnya membuat user operasional dengan role **user_reader** dan **user_writer** menggunakan validasi password yang disetujui oleh server.
+4. selanjutnya, membuat user operasional dengan role **user_reader** dan **user_writer** menggunakan validasi password yang disetujui oleh server.
    - memastikan user operasional yang login ke dalam database server seminimal mungkin diberikan izin hak akses.
    - merupakan security database level middle enterprise yang wajib saya terapkan untuk keamanan data.
 
