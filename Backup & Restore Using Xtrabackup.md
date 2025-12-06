@@ -49,16 +49,19 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
      <img width="1692" height="382" alt="Screenshot (179)" src="https://github.com/user-attachments/assets/40c718b4-a702-432b-951a-a4aec3839d41" />
      - untuk level lanjutan, mengkonfigurasi ~./my.cnf sebagai default-dir xtrabackup yang menyimpan user backup merupakan langkah yang lebih aman supaya tidak menggunakan baris perintah **user** dan **passworduser**
 
-6. cek file di lokasi file backup
-   <img width="1108" height="540" alt="Screenshot (181)" src="https://github.com/user-attachments/assets/524bcb02-91a2-4e71-8bf6-8e58fcc171eb" />
-
 
 7. mengirim file backup ke server yang berbeda menggunakan ssh@ipserver dan lokasi file backup di server yang berbeda
 
-11. memindahkan file backup ke lokasi file data
 
-12. melakukan restore data file ke dalam database di server yang berbeda
+8. ubah kepemilikan pada backup file menjadi milik database server
 
+
+9. **prepare** untuk menyimpan transaction log yang sudah commit, dan rollback transaction log yang belum commit
+    - funsinya untuk menjaga konsistensi data
+
+10. melakukan restore backup file
+
+11. cek schemas pada server yang berbeda
 
 
 
