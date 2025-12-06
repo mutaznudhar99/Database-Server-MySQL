@@ -50,7 +50,7 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
      - untuk level lanjutan, mengkonfigurasi ~./my.cnf sebagai default-dir xtrabackup yang menyimpan user backup merupakan langkah yang lebih aman supaya tidak menggunakan baris perintah **user** dan **passworduser**
 
 
-7. mengirim file backup ke server restore menggunakan ssh@ipserver:pathbackup
+5.  mengirim file backup ke server restore menggunakan ssh@ipserver:pathbackup
    - penting untuk memberi izin kepemilikan username server pada pathbackup di server restore
      
      <img width="1001" height="221" alt="Screenshot (209)" src="https://github.com/user-attachments/assets/58ed636b-8d51-4528-a150-7e173e9389b3" />
@@ -79,7 +79,7 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
 10. melakukan restore backup file
     <img width="1688" height="394" alt="Screenshot (205)" src="https://github.com/user-attachments/assets/56674a4c-5ac8-413c-a631-3debc4b3d214" />
 
-12. berikan izin kepemilikan mysql pada repositori /var/lib/mysql dan /var/log/mysql dan start mysql
+11. berikan izin kepemilikan mysql pada repositori /var/lib/mysql dan /var/log/mysql dan start mysql
     <img width="725" height="63" alt="Screenshot (206)" src="https://github.com/user-attachments/assets/56c5acbe-adf6-4e54-b704-019048774ab4" />
 
 12. cek schemas dan size pada server restore
@@ -89,7 +89,7 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
     <img width="1068" height="325" alt="Screenshot (208)" src="https://github.com/user-attachments/assets/435700fc-8c7a-49bd-bf87-7a6bd6c800f0" />
 
 
-14. cek data exist pada database yang sudah dibuat diawal menggunakan **sql statement**
+13. cek data pada database yang sudah dibuat pada source server menggunakan **sql statement**
     <img width="1157" height="207" alt="Screenshot (215)" src="https://github.com/user-attachments/assets/d8abfedd-9f41-4607-bdbc-ab730be53ef7" />
 
 
