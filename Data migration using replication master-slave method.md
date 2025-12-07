@@ -1,6 +1,7 @@
 pada sesi ini, saya akan melakukan migrasi data dari server primary ke server standby menggunakan metode replikasi master-slave untuk pengaplikasian migrasi data near zero downtime.
 hal ini penting dilakukan untuk memigrasi data critical. hal yang dibutuhkan saat memigrasi data menggunakan metode rpelikasi master-slave:
-- menyediakan 1 server primary dan server standby
+- menyediakan 1 server primary dan 1 server standby menggunakan versi yang sama atau versi yang berbeda (minor)
+- migrasi versi mysql 8.0.34 - 8.0.34
 - menggunakan tools xtrabackup
 - mengaktifkan binar log + gtid (global transaction identifier), gtid menjadi dasar yang penting untuk replikasi modern, pemulihan, dan failover.
 metode ini berupa metode kelanjutan dari backup & recovery pitr menggunakan xtrabackup + binary log.
@@ -38,7 +39,48 @@ metode ini berupa metode kelanjutan dari backup & recovery pitr menggunakan xtra
 11. memastikan file backup sudah ada di folder backup server replica
     <img width="1111" height="441" alt="Screenshot (300)" src="https://github.com/user-attachments/assets/6524f2f5-0626-41a6-8c24-df99daf3f92f" />
 
-12. 
+12. stop mysql services
+
+12. restore file backup ke dalam database di server replica
+    <img width="1685" height="281" alt="Screenshot (303)" src="https://github.com/user-attachments/assets/5a9988fc-7d6e-4b95-8704-b9f0d0310e37" />
+
+13. start mysql services
+    <img width="1292" height="111" alt="Screenshot (304)" src="https://github.com/user-attachments/assets/c6a3e228-a6f9-4923-90db-81b31e4c1a9f" />
+
+14. login ke database server replica dan memastikan gtid_executed sama dengan gtid_executed di source server
+    <img width="1239" height="405" alt="Screenshot (305)" src="https://github.com/user-attachments/assets/9daa1224-f5af-436d-a06b-5bc528c663d5" />
+
+15. konfigurasi koneksi ke database ssource server
+    <img width="915" height="137" alt="Screenshot (307)" src="https://github.com/user-attachments/assets/52d5c3c7-cd93-4930-8a7b-37c28d6c98ba" />
+
+16. start replikasi dan melihat status replikasi
+    <img width="1133" height="678" alt="Screenshot (308)" src="https://github.com/user-attachments/assets/aa497e6c-1642-46d5-be96-3c875ee7b264" />
+    - memastikan bahwa tidak ada error apapun pada variable database replikasi
+
+17. cek schemas dan size schema di database server replica. memastikan database dan size yang ada sesuai dengan database source server
+    <img width="1191" height="503" alt="Screenshot (314)" src="https://github.com/user-attachments/assets/898e7d5e-cb58-4056-84de-4e107fa2fd3a" />
+
+18. lakukan pengujian sinkronisasi data antara database source server dengan database server replica
+    <img width="913" height="169" alt="Screenshot (315)" src="https://github.com/user-attachments/assets/ba3d9f37-168c-4da3-b64a-54527ae669f8" />
+    <img width="954" height="380" alt="Screenshot (316)" src="https://github.com/user-attachments/assets/bfbd8325-baf2-4261-ba7c-0ba283cab39d" />
+
+19. untuk melakukan migrasi data near zero downtime bisa melakukan step berikut:
+    - sutdown mysql service database source server
+    - stop replica di server replica
+    - reset all replica
+    - mengaktifkan parameter read-write (read_only=off)
+    - restart mysql service di server replica
+
+
+##secara teknis migrasi data menggunakan metode klasik replikasi master-slave bisa dilakukan. hal ini tentu bisa diaplikasin untuk database yang memiliki data yang besar dan sangat critical yang membutuhkan near zero downtime untuk migrasi data. 
+
+
+
+
+
+
+
+
 
 
 
