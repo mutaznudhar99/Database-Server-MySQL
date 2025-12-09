@@ -18,14 +18,13 @@ pada sesi kali ini, saya akan melakukan maintenance database server untuk mengem
 
 
 
-4. membuat index untuk mengoptimalkan perencanaan eksekusi query statement yang masih memindai full table menjadi pemindaian index. fungsinya mengambil data menjadi lebih cepat tanpa perlu memindai seluruh isi
-   baris data yang ada.
+4. membuat index untuk mengoptimalkan perencanaan eksekusi query statement yang masih memindai full table menjadi pemindaian index. fungsinya mengambil data menjadi lebih cepat tanpa perlu memindai seluruh isi table.
    <img width="1648" height="403" alt="Screenshot (327)" src="https://github.com/user-attachments/assets/ce41035e-1b1f-4d8c-8a3a-58c2323bde0e" />
    - actual-time : 0.0332 > 0.0276
    - scan-rows : 10 > 5
    penggunaan index ini akan terlihat jelas efektifitasnya pada table yange memiliki jumlah baris yang besar.
 
-5. cek daftar index di dalam 1 database.
+5. cek daftar index di dalam sebuah database.
    <img width="1167" height="172" alt="Screenshot (328)" src="https://github.com/user-attachments/assets/998bcdf0-a773-4fd5-bc15-4fb4551f9af1" />
 
 6. cek fragmentasi dan size table (innodb)
