@@ -10,7 +10,7 @@ pada sesi kali ini, saya akan melakukan maintenance database server untuk mengem
    <img width="1094" height="267" alt="Screenshot (319)" src="https://github.com/user-attachments/assets/2d4df3d6-994e-4283-8686-981f6e847e90" />
    <img width="954" height="343" alt="Screenshot (321)" src="https://github.com/user-attachments/assets/c74c593e-6570-4515-8e12-caa4a712cfcf" />
    - cardinality : semakin angkanya menyamai jumlah baris data yang ada, optimizer akan mengambil keputusan yang tepat saat merencanakan eksekusi query statement.
-   - visible : jika (yes) indeks tersebut bisa digunakan untuk kebutuhan query optimizer
+   - visible : jika (yes) indeks pada column_name (id) tersebut bisa digunakan untuk kebutuhan query optimizer
 
 
 3. membuat perencanaan eksekusi query statement untuk mengoptimalkan rencana eksekusi yang lebih efisien tanpa menjalankan query statement tersebut.
