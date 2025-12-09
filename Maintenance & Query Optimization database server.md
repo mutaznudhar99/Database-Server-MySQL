@@ -35,8 +35,7 @@ pada sesi kali ini, saya akan melakukan maintenance database server untuk mengem
 
 7. cek index yang jarang digunakan atau bahkan sama sekali tidak digunakan selama monitoring index
    <img width="1270" height="395" alt="Screenshot (330)" src="https://github.com/user-attachments/assets/55447a4a-fe38-4588-9423-970255e7ec12" />
-   - total_acess = menghitung apakah table menggunakan index tersebut atau tidak. apabila 0, menghapus index merupakan pilihan yang tepat.
-
+   - total_acess = menghitung berapa kali index tersebut digunakan. apabila minim penggunaan selama 1 minggu misalnya, mempertimbangkan untuk menghapusnya bisa menjadi pilihan yang tepat. 
 
 
 
