@@ -55,6 +55,25 @@ hal-hal yang perlu dipersiapkan sebelum melakukan clustering data.
    - memastikan status server sebagai server primary untuk clustering.
 
 
+7. menambahkan server database lain ke dalam cluster
+   <img width="1595" height="882" alt="Screenshot (374)" src="https://github.com/user-attachments/assets/e32b4463-4312-4c80-8069-0bccd6c7c4fb" />
+   - melakukan hal yang sama pada server lain yang akan ditambahkan ke dalam cluster
+
+
+8. cek status server yang baru saja ditambahkan ke dalam cluster
+   <img width="1080" height="708" alt="Screenshot (375)" src="https://github.com/user-attachments/assets/fe6361c9-d342-482a-b861-3d3fff3ea926" />
+   - member_role = status database server
+   - mode = R/W (read-write) untuk server primary, dan R/0 (read only) untuk server standby
+   - cek ulang status saat menambahkan server baru ke dalam cluster
+
+
+9. setelah membuat cluster dan menambahkan seluruh server ke dalam cluster, database server secara otomatis akan membuat database/schema baru **mysql_innodb_cluster_metadata** sebagai single source of truth yang menyimpan semua informasi kritis mengenai cluster yang dibuat.
+   <img width="1073" height="260" alt="Screenshot (376)" src="https://github.com/user-attachments/assets/c26a3216-f8b9-4448-84ed-e50827941495" />
+
+
+
+
+
 
 
 
