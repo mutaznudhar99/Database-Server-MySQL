@@ -71,7 +71,71 @@ hal-hal yang perlu dipersiapkan sebelum melakukan clustering data.
    <img width="1073" height="260" alt="Screenshot (376)" src="https://github.com/user-attachments/assets/c26a3216-f8b9-4448-84ed-e50827941495" />
 
 
-10. selanjutnya, instal mysql router di server berbeda dengan node server sebagai praktik terbaik. bertujuan supaya router tetap aktif apabila salah satu node server mengalami crash/kerusakan system.
+10. selanjutnya, instal mysql router di server berbeda dari node server. bertujuan supaya router tetap aktif apabila salah satu node server mengalami crash/kerusakan system.
+    <img width="724" height="63" alt="Screenshot (1)" src="https://github.com/user-attachments/assets/2b56b89f-48d7-4d4a-9036-27589f39146e" />
+
+
+11. konfigurasi mysql router untuk bisa terhubung ke node server cluster yang sudah ada
+    <img width="1017" height="464" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/b7af48c5-8c1b-4316-ba80-f8d9324b0869" />
+    - mysql classic protocol menunjukkan, konfigurasi mysql router telah berhasil dilakukan untuk menghubungkan aplikasi(client) kepada port lokal sebagai server read-write atau read-only untuk mendapatkan fitur high availibility dan load balancing.
+
+
+12. selanjutnya verifikasi jaringan mysql protocol apakah sudah benar-benar dijalankan oleh mysql router
+    - install net-tools
+      <img width="1030" height="519" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/429c6a2c-7a62-4449-a9c8-9557177712bc" />
+
+    - cek jaringan mysql protocol untuk memastikan sudah berjalan di atas program mysql router
+      <img width="903" height="78" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/f1c80163-fabf-4c7f-9842-cc8bd6f6360d" />
+      <img width="997" height="331" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/2e82cd64-1cba-44c5-93e9-51e7dbfd0e66" />
+
+
+13. membuat user aplikasi baru dengan all permission seperti root di server primary untuk digunakan oleh mysql router sebagai user utama untuk monitoring cluster dari mysql router.
+    <img width="955" height="178" alt="Screenshot (378)" src="https://github.com/user-attachments/assets/63b00a80-31da-45d6-9d0b-13ad66aa9cf2" />
+    <img width="1693" height="257" alt="Screenshot (379)" src="https://github.com/user-attachments/assets/d279a17c-9474-4281-9707-dc2f4322dfc3" />
+
+
+
+14. install mysql client di server mysql router untuk terkoneksi ke dalam mysql protocol read-write atau read-only.
+    <img width="1093" height="223" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/766907c3-a7df-4e4e-8928-5063270c26a1" />
+
+
+15. login ke dalam database node server primary dari mysql router menggunakan host ip lokal dan port dari mysql protocol.
+    <img width="917" height="556" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/7c46690f-574e-4b92-9de5-3738ec986a6f" />
+    <img width="826" height="546" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/11917aef-2e83-4b10-922d-ec57da58843d" />
+
+
+16. uji database server node primary dengan membuat schema baru dan cek konsistensi data di server node standby.
+    <img width="730" height="422" alt="Screenshot (10)" src="https://github.com/user-attachments/assets/3a985b43-499a-43fb-aa08-0809899db34b" />
+    <img width="858" height="372" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/b9f70306-9167-4776-a202-a727d6bebb49" />
+
+
+17. cek database server node standby dalam mode read-only atau read-write untuk memastikan server node standby hanya dalam mode read-only.
+    <img width="1069" height="453" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/40ed64e5-4804-47a4-b52d-afa7dad4202e" />
+
+
+18. monitoring cluster di server mysql router menggunakan database server read-only
+    <img width="1042" height="385" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/56b7ca35-914a-4ee0-8c7e-5a03ad0421e4" />
+
+
+
+
+
+##secara teknis, innodb cluster bisa dilakukan. untuk level enterprise perlu mempertimbangkan hal fundamental seperti keamanan, kemudahan pengoperasian dan sebagainya.
+
+    
+
+
+
+
+
+
+
+    
+    
+      
+
+    
+
     
 
 
