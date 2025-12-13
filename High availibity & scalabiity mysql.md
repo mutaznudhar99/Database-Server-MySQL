@@ -6,8 +6,8 @@ pada sesi kali ini, saya akan melakukan high availibility database dan clusterin
 
 mysql innodb cluster menggabungkan beberapa komponen native, diantaranya:
 - mysql group replication, yang terdiri dari beberapa server replikasi (minimal 3) 1 server primary/multi master primary dan beberapa node replika yang dijadikan dalam sebuah kelompok/group
-- mysql shell, sebagai command line administrasi setiap server
-- mysql router, sebagai penghubung/connection pooling antara client dengan node database server.
+- mysql shell, sebagai command line adminAPI setiap server
+- mysql router, sebagai perantara/proxy yang berdiri di antara aplikas(client) dan innodb cluster. berperan menyediakan high availibility dan load balancing.
 
 hal-hal yang perlu dipersiapkan sebelum melakukan clustering data.
 - ruang disk yang cukup
@@ -69,6 +69,10 @@ hal-hal yang perlu dipersiapkan sebelum melakukan clustering data.
 
 9. setelah membuat cluster dan menambahkan seluruh server ke dalam cluster, database server secara otomatis akan membuat database/schema baru **mysql_innodb_cluster_metadata** sebagai single source of truth yang menyimpan semua informasi kritis mengenai cluster yang dibuat.
    <img width="1073" height="260" alt="Screenshot (376)" src="https://github.com/user-attachments/assets/c26a3216-f8b9-4448-84ed-e50827941495" />
+
+
+10. selanjutnya, instal mysql router di server berbeda dengan node server sebagai praktik terbaik. bertujuan supaya router tetap aktif apabila salah satu node server mengalami crash/kerusakan system.
+    
 
 
 
