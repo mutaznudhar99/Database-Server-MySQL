@@ -6,7 +6,7 @@ pada sesi kali ini, saya akan melakukan maintenance database server yang bisa di
    <img width="1215" height="395" alt="Screenshot (318)" src="https://github.com/user-attachments/assets/4589bd5f-4d67-45d6-9318-78650b8aee6e" />
 
 
-2. melakukan analisis table untuk memastikan optimizer selalu memiliki statistik index yang akurat terutama setelah operasi data besar seperti proses DML.
+2. melakukan analisis table untuk memastikan optimizer selalu memiliki statistik metadata yang akurat terutama setelah operasi data besar seperti proses DML.
    <img width="1094" height="267" alt="Screenshot (319)" src="https://github.com/user-attachments/assets/2d4df3d6-994e-4283-8686-981f6e847e90" />
    <img width="954" height="343" alt="Screenshot (321)" src="https://github.com/user-attachments/assets/c74c593e-6570-4515-8e12-caa4a712cfcf" />
    - cardinality : semakin angkanya menyamai jumlah baris data yang ada, optimizer akan mengambil keputusan yang tepat saat merencanakan eksekusi query statement.
