@@ -15,6 +15,8 @@ pada sesi kali ini, saya akan melakukan maintenance database server yang bisa di
 
 3. membuat perencanaan eksekusi query statement untuk mengoptimalkan rencana eksekusi yang lebih efisien tanpa menjalankan query statement tersebut.
    <img width="1309" height="569" alt="Screenshot (326)" src="https://github.com/user-attachments/assets/353f35f9-845a-4dce-a214-e08a2b2cd277" />
+   - actual-time : 0.0332
+   - scan-rows : 10, artinya melakukan full table scan kemudian mencari data query (rows : 5)
 
 
 
