@@ -1,7 +1,7 @@
-sebelum melakukan instalasi & konfigurasi database MySQL Server pada level OS linux, saya sudah menginstall virtual machine dan mengkonfigurasi OS Linux ke dalam VM
+pada sesi kali ini, saya akan melakukan instalasi dan konfigurasi database server mysql di os linux menggunakan virtual machine.
 
-
-setelah instalasi OS linux sudah selesai, selanjutnya melakukan instalasi database mysql server di OS linux yang sudah terinstall
+hal yang perlu dilakukan sebelum melakukan instalasi database server:
+- memastikan ruang disk cukup untuk instalasi virtual machine, os linux, dan database server 
 
 
 1. Update operasi sistem linux
@@ -82,15 +82,13 @@ setelah instalasi OS linux sudah selesai, selanjutnya melakukan instalasi databa
        <img width="1180" height="357" alt="Screenshot (148)" src="https://github.com/user-attachments/assets/3029f3f6-ca27-4eb1-8058-ef852aac3b9c" />
 
 
-8. Konfigurasi mysqld.cnf/my.ini sebagai konfigurasi utama database server untuk mengatur perilaku mysql server tentang bagaimana database server harus beroperasi saat startup.
+8. Konfigurasi mysqld.cnf/my.ini sebagai konfigurasi utama database server untuk mengatur perilaku database mysql server tentang bagaimana database server harus beroperasi saat berjalan.
 
    - sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
 
      <img width="1028" height="111" alt="Screenshot (152)" src="https://github.com/user-attachments/assets/a2e6018a-9e1b-4720-aab5-3c582487a053" />
      <img width="1279" height="600" alt="Screenshot (202)" src="https://github.com/user-attachments/assets/67e8b5d6-7dde-4eb2-83e4-330d1afe022f" />
         - saya mengaturnya ke dalam lingkungan non produksi yang disesuaikan dengan kebutuhan untuk database manajemen, backup & recovery, high availibility, dan monitoring logging.
-        - apabila user ingin mengaktifkan variable tambahan pada databses server, ini bisa dilakukan dengan menambahkan statement pada **mysqld.cnf**
-
 
 
 
