@@ -1,6 +1,6 @@
-setelah sebelumnya saya sudah melakukan instalasi database mysql server dan mengkonfigurasinya dalam perilaku database server non produksi, selanjutnya saya akan membuat user, permission, dan security database yang dilakukan pada level middle-enterprise.
+pada sesi kali ini, saya akan membuat role, permission, user, dan security database yang bisa diterapkan pada lingkungan enterprise untuk menjaga keamanan database server.
 
-dalam individual project ini, saya tidak akan melakukan operasional database menggunakan user 'root'. saya akan membuat user operasional yang dibagi menjadi user **read** and **writer**.
+dalam project testing ini, saya akan membuat user operasional yang dibagi menjadi user **read** and **writer**.
 
 
 1. login ke dalam database menggunakan user 'root', karena server belum membuat user operasional lain.
@@ -50,7 +50,7 @@ dalam individual project ini, saya tidak akan melakukan operasional database men
      - bisa dilakukan yang sama pada user/role yang terdaftar di dalam server
 
 
-6. di level lanjutan, menambahkan enkripsi data seperti (SSL/TLS) dan audit.log merupakan hal yang bisa/wajib diterapkan pada level enterprise untuk melindungi komunikasi internet antara client (aplikasi) dengan database server dan melakukan semua pencatatan aktifitas yang dilakukan oleh user. untuk individual project ini saya berfokus kepada pembuatan user, permission, dan security level middle enterprise.
+6. di level lanjutan, menambahkan enkripsi data seperti (SSL/TLS) dan audit.log bisa diterapkan untuk melindungi komunikasi internet antara client (aplikasi) dengan database server dan melakukan semua pencatatan aktifitas yang dilakukan oleh user. untuk individual project ini saya berfokus kepada pembuatan user, permission, dan security level middle enterprise.
      
      
      
