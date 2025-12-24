@@ -1,4 +1,4 @@
-pada sesi ini, saya akan melakukan migrasi database dari server primary ke server standby menggunakan metode replikasi master-slave untuk pengaplikasian migrasi database near zero downtime. pengaplikasian ini bisa dilakukan untuk kebutuhan maintenance server primary atau kebutuhan skalabilitas baca pada server primary tanpa membebani kerja server primary.
+pada sesi ini, saya akan melakukan migrasi data dari server primary ke server standby menggunakan metode replikasi master-slave untuk pengaplikasian migrasi data near zero downtime. pengaplikasian ini dilakukan untuk kebutuhan maintenance server primary atau kebutuhan skalabilitas baca secara manual.
 
 hal yang perlu dilakukan:
 - 1 server primary
