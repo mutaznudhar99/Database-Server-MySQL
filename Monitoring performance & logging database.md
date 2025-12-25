@@ -11,7 +11,7 @@ pada sesi kali ini, saya akan melakukan query statement untuk monitoring perform
 2. cek hit rasio buffer pool
    <img width="1282" height="260" alt="Screenshot (336)" src="https://github.com/user-attachments/assets/04210d32-584d-42c1-bd83-f3c09c612384" />
    - seberapa sering database mencari atau menemukan data yang berada di dalam buffer pool tanpa membaca data dari disk yang lebih lambat.
-   - idealnya tidak kurang dari 95%. apabila kurang dari 95% artinya buffer pool terlalu kecil untuk menampung data yang sering diakses, meningkatkan memory buffer pool bisa menjadi pilihan yang tepat.
+   - idealnya tidak kurang dari 95%. apabila kurang dari 95% artinya buffer pool terlalu kecil untuk menampung data yang sering diakses, meningkatkan memory buffer pool atau work memori bisa menjadi pilihan yang tepat.
 
 
 3. menampilkan daftar proses yang sedang dilakukan oleh user
