@@ -27,12 +27,12 @@ pada sesi kali ini, saya akan melakukan query statement untuk monitoring perform
    <img width="1237" height="348" alt="Screenshot (341)" src="https://github.com/user-attachments/assets/f924a713-ff39-4c0e-9fa9-8918ca5ce60b" />
 
 
-5. mengaktifkan konfigurasi error.log di my.ini/mysqld.cnf untuk memonitoring operasional dan masalah kritis pada database server untuk menjaga stabilitas dan kesehatan server.
+5. mengaktifkan file error.log di my.ini/mysqld.cnf untuk memonitoring operasional dan masalah kritis pada database server untuk menjaga stabilitas dan kesehatan server.
    <img width="995" height="93" alt="Screenshot (342)" src="https://github.com/user-attachments/assets/85ad7a92-c3d0-4e83-a2fc-391fdb49a40e" />
    <img width="1487" height="130" alt="Screenshot (343)" src="https://github.com/user-attachments/assets/1c447caf-5fb5-4ce6-9455-9f37f9bc07fd" />
 
 
-6. mengaktifkan konfigurasi general log di my.ini/mysqld.cnf yang berfungsi mencatat setiap statement yang masuk ke server yang diterima dari client.
+6. mengaktifkan file general log di my.ini/mysqld.cnf yang berfungsi mencatat setiap statement yang masuk ke server yang diterima dari client.
    - dapat diaktifkan untuk proses auditing dan debugging.
    - dapat dipertimbangkan untuk mengaktifkannya sesekali karena berdampak besar pada performa server
    <img width="921" height="83" alt="Screenshot (344)" src="https://github.com/user-attachments/assets/d082f704-68b8-4c18-9bb2-f6a3f428e5b2" />
