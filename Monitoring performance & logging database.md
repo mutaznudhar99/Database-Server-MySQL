@@ -18,7 +18,7 @@ pada sesi kali ini, saya akan melakukan query statement untuk monitoring perform
    <img width="1334" height="800" alt="Screenshot (339)" src="https://github.com/user-attachments/assets/5a5748df-85df-46f2-ad6c-f5152566a3dd" />
    
 
-4. mengaktifkan konfigurasi slow-query log di my.ini/mysqld.cnf untuk melihat daftar query lambat yang dapat berpengaruh ke performa database
+4. mengaktifkan file log slow-query di my.ini/mysqld.cnf untuk melihat daftar query lambat yang dapat berpengaruh ke performa database
    <img width="996" height="117" alt="Screenshot (340)" src="https://github.com/user-attachments/assets/c23c1f69-e3d6-4d46-84e1-6511241d0379" />
    - long_query_time = query yang melebihi batas waktu tersebut akan dicatat ke dalam file slow-query log
    - long_query_not_using_index = mencatat query yang tidak menggunakan index, melebihi long-query-time, dan query yang memindai seluruh table
