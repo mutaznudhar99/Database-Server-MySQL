@@ -83,7 +83,7 @@ hal yang dipersiapkan sebelum melakukan clustering data.
     - install net-tools
       <img width="1030" height="519" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/429c6a2c-7a62-4449-a9c8-9557177712bc" />
 
-    - cek jaringan mysql protocol untuk memastikan sudah berjalan di atas program mysql router
+    - cek jaringan mysql protocol untuk memastikan sudah berjalan di atas mysql router
       <img width="903" height="78" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/f1c80163-fabf-4c7f-9842-cc8bd6f6360d" />
       <img width="997" height="331" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/2e82cd64-1cba-44c5-93e9-51e7dbfd0e66" />
 
