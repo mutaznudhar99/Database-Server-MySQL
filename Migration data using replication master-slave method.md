@@ -72,7 +72,7 @@ hal yang perlu dilakukan:
     - restart mysql service di server replica
 
 
-##secara teknis migrasi data menggunakan metode klasik replikasi master-slave bisa dilakukan. hal ini tentu bisa diaplikasin untuk database yang memiliki data yang besar dan sangat critical yang membutuhkan near zero downtime untuk migrasi data. 
+ 
 
 
 
