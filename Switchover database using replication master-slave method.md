@@ -1,10 +1,10 @@
-pada sesi ini, saya akan melakukan migrasi data dari server primary ke server standby menggunakan metode replikasi master-slave untuk pengaplikasian migrasi data near zero downtime. pengaplikasian ini dilakukan untuk kebutuhan maintenance server primary atau kebutuhan skalabilitas baca secara manual.
+pada sesi kali ini, saya akan melakukan switchover database pada arsitektur MySQL Source-Replica menggunakan GTID (Global Transaction Identifier). Tujuannya adalah melakukan transisi peran secara terencana guna pemeliharaan server dengan jaminan integritas data.
 
 hal yang perlu dilakukan:
-- 1 server primary
-- 1 server standby
+- 1 server source
+- 1 server replica
 - install tool xtrabackup
-- mengaktifkan binar log + gtid (global transaction identifier), binar log dan gtid menjadi dasar yang penting untuk replikasi modern, pemulihan, dan failover.
+- mengaktifkan binari log + gtid (global transaction identifier), binar log dan gtid menjadi dasar yang penting untuk replikasi modern, pemulihan, dan failover.
 
 
 1. konfigurasi mysql.cnf pada source server dan replica server
