@@ -1,4 +1,4 @@
-pada sesi ini, saya akan melakukan full backup + binary log untuk pemulihan bencana/disaster recovery ke titik waktu tertentu sebelum tejadinya kehilangan data atas human error atau kerusakan system. metode ini merupakan metode lanjutan dari backup & restore sebelumnya.
+pada sesi ini, saya akan melakukan prosedur pemulihan data hingga titik waktu spesifik (PITR) dengan mengombinasikan Physical Full Backup (menggunakan Percona XtraBackup) dan Binary Log. Metode ini bertujuan untuk meminimalkan Data Loss akibat human error atau kegagalan sistem setelah jadwal backup rutin selesai.
 
 fungsi binary log:
 - file binary log mencatat semua modifikasi data logis yang terjadi
@@ -7,7 +7,7 @@ fungsi binary log:
 
 
 
-1. konfigurasi mysql.cnf source server untuk mengaktifkan binary log pada database server
+1. Mengaktifkan mekanisme Binary Logging pada konfigurasi mysqld.cnf.
    - sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
      <img width="831" height="145" alt="Screenshot (217)" src="https://github.com/user-attachments/assets/d6d54211-1e3a-4ecd-b46b-6af7a6ad3337" />
 
@@ -17,33 +17,33 @@ fungsi binary log:
 3. login ke dalam database, dan cek status binary log. memastikan binary log sudah aktif.
    <img width="977" height="410" alt="Screenshot (250)" src="https://github.com/user-attachments/assets/37b53e57-62ef-4885-9381-bf3f06335a84" />
 
-4. membuat schema berisikan 1 table dan 5 baris data
+4. Mmebuat sampel data sebagai bahan testing disaster recovery pasca terjadinya kegagalan system atau human error.
    <img width="1685" height="791" alt="Screenshot (267)" src="https://github.com/user-attachments/assets/d21f2920-f47e-47db-a8c6-d19793adc94a" />
 
-5. buat folder backup untuk menyimpan file backup data
+5. Membuat folder backup sebagai tempat menyimpan file backup data sementara
    <img width="934" height="84" alt="Screenshot (268)" src="https://github.com/user-attachments/assets/90c5863e-6a17-442c-ab78-3bd32a41e16d" />
 
-6. ambil full backup dan simpan ke lokasi file backup yang sudah dibuat
+6. Melakukan eksekusi full backup dan menyimpannya ke lokasi file backup sementara
    <img width="1697" height="274" alt="Screenshot (269)" src="https://github.com/user-attachments/assets/69e4a05f-ff51-4683-8afc-29328133d3ac" />
 
-7. cek file backup di folder backup
+7. Validasi file backup. memastikan seluruh komponen data direktori sudah terbackup.
    <img width="1291" height="472" alt="Screenshot (274)" src="https://github.com/user-attachments/assets/1e6e15ad-dbef-4abe-89bf-d7a61f9dc9b8" />
 
-8. prepare folder full backup sebelum di transfer ke server standby
-   - prepare ini penting dilakukan untuk menyimpan transaksi yang sudah di commit dan rollback transaksi yang belum di commit
+8. Melakukan --prepare file backup sebelum di transfer ke server standby. memasitkan integritas data.
+   - penting dilakukan untuk menyimpan transaksi yang sudah di commit dan rollback transaksi yang belum di commit
      <img width="1685" height="267" alt="Screenshot (270)" src="https://github.com/user-attachments/assets/1d192c3b-2054-4d6b-95d5-6c7adeecce8c" />
 
-9. buat folder backup untuk menyimpan backup file data dari server primary, dan memberikan hak akses kepada user server
+9. Membuat folder backup untuk menyimpan backup file data dari source server, dan memberikan hak akses kepada user server target.
    <img width="933" height="95" alt="Screenshot (271)" src="https://github.com/user-attachments/assets/7cb15fe7-347d-4333-9d30-10d2f1860f26" />
 
-10. transfer folder backup dari server primary ke server standby
+10. Transfer data backup dari source server ke server target menggunakan protokol (Rsync)
     <img width="1306" height="252" alt="Screenshot (272)" src="https://github.com/user-attachments/assets/7fca4185-8625-47e6-aa4a-64bd8a52064a" />
 
-11. cek file backup di folder server standby
+11. Validasi file backup di server target
     - memastikan isi file backup sesuai dengan file backup di server primary
       <img width="1348" height="442" alt="Screenshot (273)" src="https://github.com/user-attachments/assets/942e6216-bc3f-47a7-a79e-cafca99a7a99" />
 
-12. di server primary, input beberapa data tambahan ke dalam schema yang berisikan 1 table dan 5 baris data
+12. Membuat tambahan data pada database di source server untuk memvalidasi konsep disaster recovery.
     <img width="1085" height="830" alt="Screenshot (275)" src="https://github.com/user-attachments/assets/8383d451-b446-4a34-9b01-5225c890b64d" />
 
 13. cek binary log di dalam folder /var/log/mysql server primary
