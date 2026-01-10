@@ -1,11 +1,10 @@
-pada sesi kali ini, saya akan melakukan instalasi dan konfigurasi database server mysql di os linux menggunakan virtual machine.
+pada sesi kali ini, saya akan melakukan instalasi dan konfigurasi database server mysql di server OS linux menggunakan virtual machine.
 
-hal yang perlu dilakukan sebelum melakukan instalasi database server:
-- memastikan ruang disk cukup untuk instalasi virtual machine, os linux, dan database server 
+hal yang dilakukan sebelum melakukan instalasi database server:
+- menyiapkan kapasitas disks yang cukup untuk install virtual machine, iso linux, dan server database.
 
 
-1. Update operasi sistem linux
-   - dilakukan untuk memperbarui dan menginstall repository index pada system
+1. Melakukan system update. memastikan repositori pada server OS terupdate.
 
      - sudo apt update
        
@@ -20,7 +19,7 @@ hal yang perlu dilakukan sebelum melakukan instalasi database server:
        <img width="1660" height="265" alt="Screenshot (135)" src="https://github.com/user-attachments/assets/e370cc77-619d-4fbb-b6e0-ccd031af1b7f" />
 
 
-3. Mencari MySQL Package yang tersedia di dalam operasi sistem
+3. Identifikasi Paket distribusi database server yang tersedia di dalam operasi sistem
 
      - apt-cache search mysql-server
    
@@ -31,7 +30,7 @@ hal yang perlu dilakukan sebelum melakukan instalasi database server:
        <img width="1106" height="202" alt="Screenshot (138)" src="https://github.com/user-attachments/assets/d9ac6516-2446-4ed6-b803-132827e74916" />
 
 
-4. Install database mysql server dan cek apakah database sudah aktif atau belum
+4. Melakukan instalasi binary MySQL Server dan memastikan service database berjalan dengan status Active pada level sistem.
 
      - sudo apt install mysql-server-versi
 
@@ -42,7 +41,7 @@ hal yang perlu dilakukan sebelum melakukan instalasi database server:
        <img width="1000" height="307" alt="Screenshot (143)" src="https://github.com/user-attachments/assets/360558f7-0d4f-4bfb-96d8-801860834117" />
 
 
-5. setting password untuk user 'root'
+5. Melakukan prosedur mitigasi risiko keamanan pada instalasi standar (default)
    - secara default, Database MySQL Server yang baru saja di instalasi di os linux sepenuhnya belum terenksipsi. artinya, user root bisa terkoneksi ke dalam database tanpa sebuah security server.
 
      - sudo mysql
@@ -56,8 +55,7 @@ hal yang perlu dilakukan sebelum melakukan instalasi database server:
        - tidak bisa lagi terkoneksi ke database server hanya dengan syntax **Sudo mysql**
 
 
-6. kontrol systemctl database pada os
-   - biasanya dilakukan ketika ingin melakukan cold backup atau setelah perubahan configurasi pada mysqld.cnf/my.ini
+6. manajemen service database pada level system
 
      - sudo systemctl start mysql
 
@@ -74,8 +72,7 @@ hal yang perlu dilakukan sebelum melakukan instalasi database server:
        <img width="1234" height="328" alt="Screenshot (147)" src="https://github.com/user-attachments/assets/0274e59f-4110-4d97-a0f5-1ed660a3920e" />
 
 
-7. Cek troubleshooting systemctl/service
-   - apabila user gagal menjalankan service database, cek service log isu.
+7. Cek troubleshooting service database
 
      - sudo journalctl -u mysql -xe
 
