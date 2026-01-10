@@ -1,4 +1,4 @@
-pada sesi ini, saya akan melakukan backup & restore pada server database mysql yang berbeda dengan versi yang sama 8.0 menggunakan percona xtrabackup.8.0
+pada sesi ini, saya akan melakukan Migrasi fisik antar server database mysql menggunakan percona xtrabackup.
 
 kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterprise backup:
 - percona xtrabackup merupakan tools backup open source dibandingkan mysql backup yang berbayar
@@ -12,7 +12,7 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
 
 
 
-1. membuat 1 schema pada database server sebagai contoh, yang berisikan 1 table dan 5 baris data untuk melakukan restore data ke server yang berbeda.
+1. Membuat sampel data sebagai bahan testing backup & restore untuk memvalidasi keberhasilan data integrity.
 
    - menampilkan schema sebelum membuat schema baru
      <img width="803" height="218" alt="Screenshot (168)" src="https://github.com/user-attachments/assets/c7976a42-d017-488d-9965-2c887ee4c5ca" />
@@ -32,17 +32,17 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
 
 
 
-2. membuat file mkdir -r /mnt/backups yang digunakan untuk menyimpan backup sementara.
+2. Menyiapkan Staging Area di direktori /mnt/backups untuk menampung file backupset sementara.
    <img width="942" height="223" alt="Screenshot (178)" src="https://github.com/user-attachments/assets/34c1a221-ffde-400f-8e88-ac004ef18a49" />
 
 
-3. sebelum melakukan backup, cek ukuran file data dan schema untuk monitoring dan memanajemen ruang lokasi backup data dan server restore yang berbeda.
+3. Melakukan inspeksi terhadap disk space pada direktori data. memastikan kapasitas storage pada target server mencukupi.
 
    - sudo du -h -d 1 /var/lib/mysql
      <img width="733" height="184" alt="Screenshot (177)" src="https://github.com/user-attachments/assets/6dc519da-4404-422a-b7e8-3c560db9bac5" />
 
 
-4. melakukan full backup menggunakan percona xtrabackup
+4. Melakukan eksekusi full backup
 
    - xtrabackup --backup --compress --user=root --password=passwordroot --target-dir=pathbackup
      
@@ -50,25 +50,25 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
      - untuk level lanjutan, mengkonfigurasi ~./my.cnf sebagai default-dir xtrabackup yang menyimpan user backup merupakan langkah yang lebih aman supaya tidak menggunakan baris perintah **user** dan **passworduser**
 
 
-5. mengirim file backup ke server restore menggunakan ssh@ipserver:pathbackup
+5. Migrasi backupset ke server target melalui protokol (Rsync)
    - penting untuk memberi izin kepemilikan username server pada pathbackup di server restore
      
      <img width="1001" height="221" alt="Screenshot (209)" src="https://github.com/user-attachments/assets/58ed636b-8d51-4528-a150-7e173e9389b3" />
 
 
-6. ubah kepemilikan backup file menjadi milik mysql di server restore
+6. Penyesuaian kepemilikan backup file agar dapat dimanipulasi oleh system user mysql di target server
 
    <img width="1150" height="424" alt="Screenshot (203)" src="https://github.com/user-attachments/assets/af804b47-8db5-4409-b84b-93b8ed9d5c45" />
 
 
 
-7. melakukan **prepare** sebelum restore data untuk menyimpan transaction log yang sudah commit, dan rollback transaction log yang belum commit
+7. Melakukan --prepare backup file untuk mengaplikasikan transaction log (redo log) ke dalam file data. Memastikan transaksi yang commit tersimpan, dan uncommitted di rollback.
     - fungsinya untuk menjaga konsistensi data
 
       <img width="1687" height="334" alt="Screenshot (191)" src="https://github.com/user-attachments/assets/a22f692c-1277-435d-b630-1181169ed054" />
 
 
-8. hapus file data dir dan log biner pada server restore. saya melakukannya dengan hati-hati karena ini sangat critical untuk system database server apabila ada kesalahan.
+8. Clean up data direktori dan log biner pada server restore. Merupakan langkah critical untuk memastikan tidak ada konflik data saat restore berlangsung.
     - restore akan gagal apabila data dir di server restore belum dihapus
     - hal ini penting dilakukan untuk mengganti data dir lama dengan yang baru hasil full backup dari source server
     - mentransfer data dari database source server kedalam database server restore
@@ -76,13 +76,13 @@ kenapa memilih menggunakan percona xtrbackup dibandingkan dengan mysql enterpris
       <img width="797" height="69" alt="Screenshot (204)" src="https://github.com/user-attachments/assets/57833c3a-8874-4860-a6b5-23358edad331" />
 
 
-9. melakukan restore backup file
+9. Melakukan restore backup file pada target server
     <img width="1688" height="394" alt="Screenshot (205)" src="https://github.com/user-attachments/assets/56674a4c-5ac8-413c-a631-3debc4b3d214" />
 
-10. berikan izin kepemilikan mysql pada repositori /var/lib/mysql dan /var/log/mysql dan start mysql
+10. Memulihkan hak akses direktori /var/lib/mysql dan /var/log/mysql ke user mysql dan melakukan inisiasi startup pada layanan database
     <img width="725" height="63" alt="Screenshot (206)" src="https://github.com/user-attachments/assets/56c5acbe-adf6-4e54-b704-019048774ab4" />
 
-11. cek schemas dan size pada server restore
+11. Validasi komparasi sampel data dengan database source server.
     
     <img width="886" height="496" alt="Screenshot (207)" src="https://github.com/user-attachments/assets/07a1c11f-690e-4595-bafc-50ead031e412" />
 
