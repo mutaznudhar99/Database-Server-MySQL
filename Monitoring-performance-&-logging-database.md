@@ -1,4 +1,4 @@
-pada sesi kali ini, saya akan melakukan query statement untuk monitoring performa database server menggunakan fitur internal seperti file logging, sys, dan sebagainya.
+pada sesi kali ini, saya akan melakukan query statement untuk monitoring performa database server secara realtime menggunakan fitur internal seperti file logging, sys, dan sebagainya.
 
 
 1. cek innodb buffer pool sebagai memory utama untuk menyimpan data tabel dan index
