@@ -1,4 +1,4 @@
-pada sesi ini, saya akan melakukan Migrasi fisik antar server database mysql menggunakan percona xtrabackup. Percona XtraBackup dipilih karena sangat efisien menangani data skala besar (large scale data) melalui metode Hot Backup yang meminimalkan downtime
+Implementasi Migrasi fisik antar server database mysql menggunakan percona xtrabackup. Percona XtraBackup dipilih karena sangat efisien menangani data skala besar (large scale data) melalui metode Hot Backup yang meminimalkan downtime
 
 Kelebihan xtrabackup:
 - Open source    : alternatif gratis untuk MySQL enterprise backup
