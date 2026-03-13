@@ -1,4 +1,4 @@
-pada sesi ini, saya akan mengimplementasikan replikasi berbasis Global Transaction Identifier (GTID) untuk menjamin konsistensi data selama proses replikasi. Metode ini memungkinkan transisi role database (primary to standby) antar server secara terencana dan menjaga integritas data
+Implementasi replikasi berbasis Global Transaction Identifier (GTID) untuk menjamin konsistensi data selama proses replikasi. Metode ini memungkinkan transisi role database (primary to standby) antar server secara terencana dan menjaga integritas data
 
 hal yang perlu dilakukan:
 - Source server 
