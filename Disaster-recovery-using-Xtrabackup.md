@@ -1,13 +1,13 @@
-Implemented a recovery procedure using Point-in-Time Recovery (PITR). By combining XtraBackup with MySQL Binary Logs, I can restore the database to a specific moment before data loss occurred due to human error or system failure.
+Implemented a recovery procedure using Point-in-Time Recovery (PITR). By combining XtraBackup with MySQL Binary Logs, I can restore the database to a specific timestamp before data loss due to human error or system failure.
 
 The roles of Binary logs:
 - Transaction Recording: They record all logical changes (DML and DDL) made to the database.
-- Disaster Recovery: They are essential for replaying transactions that happened after the last full physical backup.
+- Disaster Recovery: They are essential for replaying transactions after the last full physical backup.
 
 
 
 
-1. Did modified mysqld.conf to activated binary logs, ensuring all data changes are recorded by the database instance
+1. Modified mysqld.conf to activated binary logs, ensuring all data changes are recorded by the database instance
 
    <img width="831" height="145" alt="Screenshot (217)" src="https://github.com/user-attachments/assets/d6d54211-1e3a-4ecd-b46b-6af7a6ad3337" />
    
@@ -32,7 +32,7 @@ The roles of Binary logs:
    <img width="1697" height="274" alt="Screenshot (269)" src="https://github.com/user-attachments/assets/69e4a05f-ff51-4683-8afc-29328133d3ac" />
 
 
-6. Verified the backup directory to ensure the metadata and binary log information were correctly captured
+6. Verified the backup directory to ensure the metadata and binary log information correctly captured
    
    <img width="1291" height="472" alt="Screenshot (274)" src="https://github.com/user-attachments/assets/1e6e15ad-dbef-4abe-89bf-d7a61f9dc9b8" />
 
@@ -73,13 +73,13 @@ The roles of Binary logs:
     <img width="1330" height="530" alt="Screenshot (280)" src="https://github.com/user-attachments/assets/0401db54-5740-47bb-83fc-23355f4fa4bd" />
 
 
-14. Do stop service database MySQL and cleanup the existing /var/lib/mysql on the target server to avoid conflicts during the physical restore
+14. Stop service database MySQL and cleanup the existing /var/lib/mysql on the target server to avoid conflicts during the physical restore
     
     <img width="1350" height="365" alt="Screenshot (279)" src="https://github.com/user-attachments/assets/38cfe13c-dc7e-4392-b072-ff14dabb3d4d" />
     <img width="1694" height="327" alt="Screenshot (282)" src="https://github.com/user-attachments/assets/c006ef66-ce38-4fab-b290-f814dce2da83" />
 
 
-15. Updated ownership of /var/lib/mysql and /var/log/mysql to the mysql user to grant necessary permissions to running database instance 
+15. Updated ownership of /var/lib/mysql and /var/log/mysql to the mysql user to grant permissions to running database instance 
       
       <img width="1012" height="776" alt="Screenshot (283)" src="https://github.com/user-attachments/assets/9de97a22-2830-4b14-9cc5-5a69e7e14c62" />
 
