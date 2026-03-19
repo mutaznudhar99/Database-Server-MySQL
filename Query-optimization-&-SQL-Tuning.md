@@ -1,4 +1,4 @@
-Demonstrated a comprehensive database maintenance and optimization process. The goal is to maintain physical disk integrity, ensure accurate metadata statistics for the query planner, and achieve efficient execution plans to minimize resource consumption and improve throughput for high-workload queries.
+Demonstrated a database maintenance and optimization process. The goal is to maintain physical disk integrity, ensure accurate metadata statistics for the query planner, and achieve efficient execution plans to minimize resource consumption and improve throughput for high-workload queries.
 
 Core Objectives:
 - Structural Integrity: Ensuring data and indexes are free from corruption.
@@ -12,7 +12,7 @@ Core Objectives:
    <img width="1215" height="395" alt="Screenshot (318)" src="https://github.com/user-attachments/assets/4589bd5f-4d67-45d6-9318-78650b8aee6e" />
 
 
-2. Did updated the database statistics and the Cost-Based Optimizer (CBO) can produce the most efficient access paths
+2. Updated the database statistics and the Cost-Based Optimizer (CBO) can produce the most efficient access paths
 
    <img width="1094" height="267" alt="Screenshot (319)" src="https://github.com/user-attachments/assets/2d4df3d6-994e-4283-8686-981f6e847e90" />
    <img width="954" height="343" alt="Screenshot (321)" src="https://github.com/user-attachments/assets/c74c593e-6570-4515-8e12-caa4a712cfcf" />
@@ -33,12 +33,12 @@ Core Objectives:
    <img width="1167" height="172" alt="Screenshot (328)" src="https://github.com/user-attachments/assets/998bcdf0-a773-4fd5-bc15-4fb4551f9af1" />
 
 
-6. Monitored index fragmentation and "bloat" caused by intensive DML activity, which can degrade performance over time
+6. Monitored index fragmentation and "bloat" by intensive DML activity, which can reduce performance over time
 
    <img width="1270" height="429" alt="Screenshot (329)" src="https://github.com/user-attachments/assets/76d23c87-a629-4615-8d42-f5d387317044" />
   
 
-7. Audited index usage statistics to ensure that all existing indexes are actually being utilized by the query planner
+7. Audited index usage statistics to ensure all existing indexes actually being utilized by the query planner
    
    <img width="1270" height="395" alt="Screenshot (330)" src="https://github.com/user-attachments/assets/55447a4a-fe38-4588-9423-970255e7ec12" />
 
