@@ -1,13 +1,13 @@
-Implemented MySQL replication using GTID to ensure data consistency between different servers. This method simplifies database role transitions (Primary to Standby) and establishes a robust environment for data integrity and High Availability (HA).
+Implemented MySQL replication using GTID to ensure data consistency between different servers. This method simplifies database role transitions (Primary to Standby) and Create a strong environtment for data integrity and High Availability (HA).
 
 Key Requirements:
 - Source & Target Servers: The primary and standby database instances.
-- Percona XtraBackup: Used for initial physical data synchronization.
+- Percona XtraBackup: Used to physical data synchronization.
 - Binary Logs & GTID: Enabled to track and replicate unique transactions.
 
 
 
-1. Updated mysqld.conf on both servers to enable gtid_mode=ON and enforce_gtid_consistency=ON, which are required for modern replication
+1. Updated mysqld.conf on both servers to enable gtid_mode=ON and enforce_gtid_consistency=ON, which are for modern replication
    
    <img width="1283" height="110" alt="Screenshot (287)" src="https://github.com/user-attachments/assets/9f76c599-a9c9-4be3-98ec-1122cdc5fe45" />
    <img width="943" height="126" alt="Screenshot (286)" src="https://github.com/user-attachments/assets/fff24534-8ffa-4789-bec3-05399b0cdcc6" />
@@ -19,17 +19,17 @@ Key Requirements:
    <img width="1229" height="620" alt="Screenshot (291)" src="https://github.com/user-attachments/assets/724cf3c0-b210-47bc-9609-fc0fb8bbd18e" />
 
 
-3. Verified the existing schema and data size on the source server to establish a baseline for consistency testing
+3. Verified the existing schema and data size on the source server to build a baseline for consistency testing
    
    <img width="1205" height="277" alt="Screenshot (292)" src="https://github.com/user-attachments/assets/fbb22642-c2af-4ba8-84e6-27d9f24b0900" />
 
 
-4. Confirmed that the source server is in Read-Write mode to allow data modifications
+4. Confirmed the source server in Read-Write mode to allow data modifications
    
    <img width="1091" height="104" alt="Screenshot (298)" src="https://github.com/user-attachments/assets/3a23c2a3-7a30-4892-8490-c35354cc714c" />
 
 
-5. Created a dedicated user with REPLICATION SLAVE privileges to authorize data transfers between the servers
+5. Created a user with REPLICATION SLAVE privileges to authorize data transfers between the servers
    
    <img width="1274" height="342" alt="Screenshot (294)" src="https://github.com/user-attachments/assets/dd8b20d5-bda2-4641-bf3b-fb50f6c78272" />
 
